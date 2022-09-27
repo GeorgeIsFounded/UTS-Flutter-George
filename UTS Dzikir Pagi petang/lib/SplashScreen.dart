@@ -37,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen> {
           Column(
             children: [
               Container(
-                margin: EdgeInsets.only(left: 70),
+                margin: EdgeInsets.only(left: 10),
                 child: Column(
                   children: [
                     Row(

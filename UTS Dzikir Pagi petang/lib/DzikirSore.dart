@@ -2,10 +2,10 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:tugas_my_eat/model/Dzikir.dart';
-import 'package:tugas_my_eat/service/dzikirService.dart';
+import 'package:dzikir_pagi_app/model/Dzikir.dart';
+import 'package:dzikir_pagi_app/service/dzikirService.dart';
 import 'main.dart';
-import 'package:tugas_my_eat/main.dart';
+import 'package:dzikir_pagi_app/main.dart';
 
 class DzikirSore extends StatefulWidget {
   const DzikirSore({Key? key}) : super(key: key);
@@ -43,10 +43,11 @@ class _DzikirSoreState extends State<DzikirSore> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
-                    padding: EdgeInsets.only(top: 10, left: 40, bottom: 200),
+                    padding: EdgeInsets.only(top: 10, left: 20, bottom: 200),
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: NetworkImage("https://i.pinimg.com/originals/a3/8c/c0/a38cc005b1cef5e61a1ecb7efe0f80ef.jpg"),
+                            image: NetworkImage(
+                                "https://i.pinimg.com/originals/a3/8c/c0/a38cc005b1cef5e61a1ecb7efe0f80ef.jpg"),
                             fit: BoxFit.fitWidth)),
                     child: Container(
                       decoration: BoxDecoration(
@@ -61,40 +62,44 @@ class _DzikirSoreState extends State<DzikirSore> {
                           borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(30),
                               topLeft: Radius.circular(30))),
-                      child: Row(
-                        children: [
-                          Container(
-                            margin: EdgeInsets.only(right: 346, left: 10),
-                            child: OutlinedButton(
-                              style: OutlinedButton.styleFrom(
-                                  minimumSize: Size(40, 45),
-                                  side:
-                                      BorderSide(width: 1, color: Colors.black),
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(30))),
-                              onPressed: () {
-                                Navigator.pushNamed(context, "/");
-                              },
+                      child: SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.958,
+                        child: Row(
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(right: 246, left: 10),
+                              child: OutlinedButton(
+                                style: OutlinedButton.styleFrom(
+                                    minimumSize: Size(40, 45),
+                                    side:
+                                        BorderSide(width: 1, color: Colors.black),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(30))),
+                                onPressed: () {
+                                  Navigator.pop(context, "/");
+                                },
+                                child: Text(
+                                  "<",
+                                  style: TextStyle(
+                                      fontSize: 30,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w300),
+                                ),
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(
+                                  top: 10, right: 15.7, bottom: 10),
                               child: Text(
-                                "<",
+                                "Dzikir Sore",
                                 style: TextStyle(
                                     fontSize: 30,
                                     color: Colors.black,
                                     fontWeight: FontWeight.w300),
                               ),
                             ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(top: 10, right: 15.7, bottom: 10),
-                            child: Text(
-                              "Dzikir Sore",
-                              style: TextStyle(
-                                  fontSize: 30,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w300),
-                            ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -109,7 +114,7 @@ class _DzikirSoreState extends State<DzikirSore> {
                     child: Row(
                         children: List.generate(dataDzikir.length, (index) {
                       return Container(
-                        padding: EdgeInsets.symmetric(horizontal: 30),
+                        padding: EdgeInsets.symmetric(horizontal: 80),
                         width: 600,
                         height: 800,
                         color: Colors.black26,
@@ -155,14 +160,14 @@ class _DzikirSoreState extends State<DzikirSore> {
                               ),
                               Text(
                                 "Latin : ${dataDzikir[index].bacaanLatin}",
-                                style: TextStyle(fontSize: 20),
+                                style: TextStyle(fontSize: 17),
                               ),
                               SizedBox(
                                 height: 18,
                               ),
                               Text(
                                 "Artinya : ${dataDzikir[index].arti}",
-                                style: TextStyle(fontSize: 20),
+                                style: TextStyle(fontSize: 17),
                               ),
                             ],
                           ),

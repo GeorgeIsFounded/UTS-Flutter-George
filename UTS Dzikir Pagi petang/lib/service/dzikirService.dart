@@ -1,7 +1,7 @@
 // ignore_for_file: unused_local_variable, file_names
 
 import "package:flutter/services.dart";
-import 'package:tugas_my_eat/model/Dzikir.dart';
+import 'package:dzikir_pagi_app/model/Dzikir.dart';
 
 class DzikirService {
   getDzikirPagi() async{

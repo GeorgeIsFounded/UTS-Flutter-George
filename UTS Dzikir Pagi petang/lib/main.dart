@@ -40,159 +40,162 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: Column(
-          children: [
-            SizedBox(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              SizedBox(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width * 1,
+                      height: MediaQuery.of(context).size.height > 200 ? MediaQuery.of(context).size.height * 0.3 : MediaQuery.of(context).size.height * 0.2,
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: [
+                                Colors.purple.shade900,
+                                Colors.purple.shade800,
+                                Colors.purple.shade600,
+                                Colors.purple.shade400,
+                                Colors.purple.shade300,
+                              ]),
+                          borderRadius:
+                              BorderRadius.only(bottomLeft: Radius.circular(30))),
+                      child: Container(
+                        margin: EdgeInsets.only(
+                          top: 50,
+                          right: 50,
+                        ),
+                        child: Column(
+                          children: [
+                            Column(
+                              children: [
+                                Text(
+                                  "Dzikir Pagi dan Petang APP",
+                                  style: TextStyle(
+                                      fontSize: 25,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                                Text(
+                                  "Kumpulan bacaan do'a dan dzikir",
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w300),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Column(
                 children: [
                   Container(
-                    margin: EdgeInsets.only(bottom: 20),
-                    padding: EdgeInsets.only(left: 245, bottom: 200),
-                    decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                            colors: [
-                              Colors.purple.shade900,
-                              Colors.purple.shade800,
-                              Colors.purple.shade600,
-                              Colors.purple.shade400,
-                              Colors.purple.shade300,
-                            ]),
-                        borderRadius:
-                            BorderRadius.only(bottomLeft: Radius.circular(30))),
-                    child: Container(
-                      margin: EdgeInsets.only(
-                        top: 50,
-                        right: 50,
-                      ),
-                      child: Column(
-                        children: [
-                          Column(
-                            children: [
-                              Text(
-                                "Dzikir Pagi dan Petang APP",
-                                style: TextStyle(
-                                    fontSize: 25,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                              Text(
-                                "Kumpulan bacaan do'a dan dzikir",
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w300),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
+                    margin: EdgeInsets.only(top: 30),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Column(
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, "/DzikirPagi");
+                              },
+                              child: buildDashedBorder(
+                                  child: Container(
+                                margin: EdgeInsets.only(top: 10, bottom: 10),
+                                width: MediaQuery.of(context).size.width * 0.4,
+                                height: 150,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: NetworkImage(
+                                            "https://cdn-icons-png.flaticon.com/512/7151/7151020.png"))),
+                              )),
+                            ),
+                            Text(
+                              "Dzikir Pagi",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 20),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, "/DzikirSore");
+                              },
+                              child: buildDashedBorder(
+                                  child: Container(
+                                margin: EdgeInsets.only(top: 10, bottom: 10),
+                                width: MediaQuery.of(context).size.width * 0.4,
+                                height: 150,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: NetworkImage(
+                                            "https://cdn-icons-png.flaticon.com/512/6840/6840307.png"))),
+                              )),
+                            ),
+                            Text(
+                              "Dzikir Sore",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 20),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 30),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Column(
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, "/DzikirSholat");
+                              },
+                              child: buildDashedBorder(
+                                  child: Container(
+                                margin: EdgeInsets.only(top: 10, bottom: 10),
+                                width: MediaQuery.of(context).size.width * 0.9,
+                                height: 150,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: NetworkImage(
+                                            "https://cdn-icons-png.flaticon.com/512/7151/7151242.png"))),
+                              )),
+                            ),
+                            Text(
+                              "Dzikir Setelah Sholat Far'du",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 20),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                 ],
               ),
-            ),
-            Column(
-              children: [
-                Container(
-                  margin: EdgeInsets.only(top: 30),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Column(
-                        children: [
-                          InkWell(
-                            onTap: () {
-                              Navigator.pushNamed(context, "/DzikirPagi");
-                            },
-                            child: buildDashedBorder(
-                                child: Container(
-                              margin: EdgeInsets.only(top: 10, bottom: 10),
-                              width: 260,
-                              height: 150,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: NetworkImage(
-                                          "https://cdn-icons-png.flaticon.com/512/7151/7151020.png"))),
-                            )),
-                          ),
-                          Text(
-                            "Dzikir Pagi",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 20),
-                          ),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          InkWell(
-                            onTap: () {
-                              Navigator.pushNamed(context, "/DzikirSore");
-                            },
-                            child: buildDashedBorder(
-                                child: Container(
-                              margin: EdgeInsets.only(top: 10, bottom: 10),
-                              width: 260,
-                              height: 150,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: NetworkImage(
-                                          "https://cdn-icons-png.flaticon.com/512/6840/6840307.png"))),
-                            )),
-                          ),
-                          Text(
-                            "Dzikir Sore",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 20),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 30),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Column(
-                        children: [
-                          InkWell(
-                            onTap: () {
-                              Navigator.pushNamed(context, "/DzikirSholat");
-                            },
-                            child: buildDashedBorder(
-                                child: Container(
-                              margin: EdgeInsets.only(top: 10, bottom: 10),
-                              width: 560,
-                              height: 150,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: NetworkImage(
-                                          "https://cdn-icons-png.flaticon.com/512/7151/7151242.png"))),
-                            )),
-                          ),
-                          Text(
-                            "Dzikir Setelah Sholat Far'du",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 20),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
